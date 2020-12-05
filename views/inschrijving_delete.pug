@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 #{title}: #{inschrijving.name}
+
+    p Wil je deze inschrijving echt verwijderen?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#inschrijvingid.form-control(type='hidden',name='inschrijvingid', required='true', value=inschrijving._id )
+      button.btn.btn-primary(type='submit') Delete

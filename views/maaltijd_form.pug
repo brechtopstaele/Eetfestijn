@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='naam') Naam van de maaltijd:
+      input#naam.form-control(type='text' placeholder='(Stoofvlees, Vol-au-vent...)' name='naam' required='true' value=(undefined===maaltijd ? '' : maaltijd.naam) )
+      label(for='hoofd_ingredient') Hoofdingrediënt van de maaltijd:
+      input#hoofd_ingredient.form-control(type='text' placeholder='(Rundsvlees, tomaat...)' name='hoofd_ingredient' required='true' value=(undefined===maaltijd ? '' : maaltijd.hoofd_ingredient) )
+      label(for='prijs') Prijs:
+      input#prijs.form-control(type='Number' placeholder='(50 euro)' name='prijs' required='true' value=(undefined===maaltijd ? '' : maaltijd.prijs))
+    div.form-group
+      label(for='summary') Beschrijving van de maaltijd:
+      textarea#summary.form-control(type='textarea' name='summary' required='true') #{undefined===book ? '' : book.summary}
+    button.btn.btn-primary(type='submit') Aanmaken
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

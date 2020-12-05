@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 Vrijwilliger: #{vrijwilliger.name}
+  p #[strong Geboortedatum:] #{vrijwilliger.date_of_birth_formatted}
+  //p #{vrijwilliger.date_of_birth_formatted}
+  
+  hr
+  p
+   a(href=vrijwilliger.url+'/delete') Verwijder vrijwilliger
+  
+  //a(href=vrijwilliger.url+'/update') Update vrijwilliger

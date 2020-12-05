@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  h2 Welkom op de website van ons eetfestijn!
+  p Na het maandenlange binnenzitten in isolatie, mag het normale leven EINDELIJK terug op gang komen. Om dat te vieren 
+    | hebben we besloten een groot eetfestijn te organiseren! 
+  p Het festijn zal doorgaan op 15/07.
+  p Als locatie kozen we het Hof van Beatrijs in Lier. Voor het exacte adres, check de  
+   a(href='/Home/contact') contact pagina
+
+  h3 Meer informatie:
+
+  if error
+    p Error bij het ophalen van dynamische content.
+  else
+    p Aantal maaltijden dat we momenteel al in de aanbieding hebben: 
+      strong !{data.maaltijd_count}
+    p Er schreven zich al: 
+      strong !{data.inschrijving_count} 
+      | mensen in voor jou!
+    p We zoeken ook nog steeds vrijwilligers om alles op de dag zelf in goede banen te helpen lopen!
+    p
+      strong !{data.vrijwilliger_count} 
+      |mensen gaven al aan graag een handje te willen helpen.
+
+  h3 Vorige editie
+  p Een paar sfeerbeelden van de vorige editie van ons geweldig eetfestijn
+  iframe( width="560" height="315" src="https://www.youtube.com/embed/K5U3s59ZwKg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

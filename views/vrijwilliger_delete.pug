@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{vrijwilliger.first_name}
+
+    p Wil je deze vrijwilliger echt verwijderen?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#vrijwilligerid.form-control(type='hidden',name='vrijwilligerid', required='true', value=vrijwilliger._id )
+
+      button.btn.btn-primary(type='submit') Delete

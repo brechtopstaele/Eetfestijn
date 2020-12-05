@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  h1 Maaltijd: #{maaltijd.naam}
+  p #[strong Prijs:] #{maaltijd.prijs + ' euro'}
+  p #[strong Hoofdingrediënt:] #{maaltijd.hoofd_ingredient}
+  p #[strong Beschrijving:] #{maaltijd.summary}
+  
+
+  a(href=maaltijd.url+'/delete') Verwijder maaltijd

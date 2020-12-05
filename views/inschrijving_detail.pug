@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Inschrijving: #{inschrijving.name}
+  p #[strong Geboortedatum:] #{inschrijving.date_of_birth_formatted}
+  p #[strong Maaltijd:] 
+    a(href=inschrijving.maaltijd.url) #{inschrijving.maaltijd.naam}
+  hr
+  p
+    a(href=inschrijving.url+'/delete') Verwijder de inschrijving
+  //p
+    a(href=inschrijving.url+'/update') Update de inschrijving

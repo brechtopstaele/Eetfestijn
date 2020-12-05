@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each vrijwilliger in vrijwilliger_list
+      li 
+        a(href=vrijwilliger.url) #{vrijwilliger.name} 
+    else
+      li Er zijn geen vrijwilligers.

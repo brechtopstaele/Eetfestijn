@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each maaltijd in maaltijd_list
+      li 
+        a(href=maaltijd.url) #{maaltijd.naam} 
+        |  (#{maaltijd.prijs+ ' euro'})
+    else
+      li Er zijn geen maaltijden.
+  img(src="/images/eten.jpg" alt="Menu image" width="500"
+        height="350")

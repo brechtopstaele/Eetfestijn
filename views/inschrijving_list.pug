@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    - inschrijving_list.sort(function(a, b) {let textA = a.family_name.toUpperCase(); let textB = b.family_name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+    each inschrijving in inschrijving_list
+      li 
+        a(href=inschrijving.url) #{inschrijving.name} 
+        |  (#{inschrijving.maaltijd.naam})
+
+    else
+      li Er zijn geen inschrijvingen.

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{maaltijd.naam}
+
+    p Wil je deze maaltijd echt verwijderen?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#maaltijdid.form-control(type='hidden',name='maaltijdid', required='true', value=maaltijd._id )
+
+      button.btn.btn-primary(type='submit') Verwijder
